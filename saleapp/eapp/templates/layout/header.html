@@ -1,0 +1,30 @@
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/">Sale App</a>
+        <button class="navbar-toggler" data-bs-target="#collapsibleNavbar" data-bs-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Trang chu</a>
+                </li>
+                {% for c in categories %}
+                <li class="nav-item">
+                    <a class="nav-link" href="/?category_id={{c.id}}">{{c.name}}</a>
+                </li>
+                {% endfor %}
+                <li class="nav-item">
+                    <a class="nav-link text-success" href="/login">Dang nhap</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-danger" href="/register">Dang ky</a>
+                </li>
+            </ul>
+            <form method="get" action="/" class="d-flex">
+                <input class="form-control me-2" type="text" placeholder="Tim san pham..." name="kw" />
+                <button class="btn btn-primary" type="submit">Tim kiem</button>
+            </form>
+        </div>
+    </div>
+</nav>
